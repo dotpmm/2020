@@ -14,3 +14,5 @@ A simple .py script to put the well known [202020](https://pmc.ncbi.nlm.nih.gov/
 - an optional sound alert
 - screen idle detection and auto-pause
 - cli args
+- application awareness and skip for 5 min feature
+- streaks count
