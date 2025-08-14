@@ -5,3 +5,12 @@ A simple .py script to put the well known [202020](https://pmc.ncbi.nlm.nih.gov/
 
 - Uses the `tkinter` python library to display a fullscreen background with a simple text for 20sec.
 - Uses the `threading` feature to keep the script alive even when focused on tkinter GUI.
+
+# Upcoming features !
+
+- Pasue resume feature
+- auto start
+- log.txt
+- an optional sound alert
+- screen idle detection and auto-pause
+- cli args
