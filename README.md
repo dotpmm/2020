@@ -8,7 +8,7 @@ A simple .py script to put the well known [202020](https://pmc.ncbi.nlm.nih.gov/
 
 # Upcoming features !
 
-- Pasue resume feature
+- Pause resume feature
 - auto start
 - log.txt
 - an optional sound alert
