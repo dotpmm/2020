@@ -3,29 +3,31 @@ import threading
 import tkinter as tk
 from datetime import datetime
 
+# The time (in seconds) the screen remains locked
 LOCK_DURATION = 20
-INTERVAL = 1200
+# The interval (in seconds) between locks
+INTERVAL = 20
 
 start_time = datetime.now()
 
 def lock():
-    print("LOCKED")
+    print("The screen has been locked!")
     screen = tk.Tk()
     screen.attributes("-fullscreen", True)
     screen.configure(bg="black")
 
     label = tk.Label(
         screen,
-        text="2020",
+        text="Hello! Time to rest your eyes!\nLook at something 20 feet away for 20 seconds.",
         fg="white",
         bg="black",
-        font=("Helvetica", 120, "bold")
+        font=("Helvetica", 100, "normal")
     )
     label.pack(expand=True)
 
     screen.after(LOCK_DURATION * 1000, screen.destroy)
     screen.mainloop()
-    print("UNLOCKED")
+    print("The screen has been unlocked!")
 
 def loop():
     while True:
@@ -35,12 +37,14 @@ def loop():
             print(
                 f"Next lock in: {sec//60} min {sec%60} sec",
                 end="\r"
+                # This retunrs the cursor to the start of the line
             )
             time.sleep(1)
         lock()
 
 if __name__ == "__main__":
     print(f"20-20-20 rule monitor started at {start_time.strftime('%H:%M:%S')}")
+    # Using a daemon thread to ensure it exits when the main program does, and does not block exit
     t = threading.Thread(target=loop, daemon=True)
     t.start()
     while True:
